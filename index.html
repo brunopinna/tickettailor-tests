@@ -1,25 +1,23 @@
 <html>
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-69KLKL9G1T"></script>
-<script>
-  const trackingId = 'G\x2D69KLKL9G1T';
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('set', 'linker', {'domains': ['www.tickettailor.com']});
-  gtag('config', trackingId);
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-69KLKL9G1T"></script>
+  <script>
+    const trackingId = 'G\x2D69KLKL9G1T';
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('set', 'linker', {'domains': ['www.tictai.zimma']});
+    gtag('config', trackingId);
 
-  window.onload = function() {
-    gtag('get', trackingId, 'client_id', (clientId) => {
-      gtag('get', trackingId, 'session_id', (sessionId) => {
-        const iFrame = document.getElementsByTagName('iframe')[0];
-        const iFrameSrc = iFrame.src + '&clientId=' + clientId + '&sessionId=' + sessionId;
-        console.log(iFrameSrc);
-        iFrame.contentWindow.history.replaceState('Append GA client and session id', "", iFrameSrc);
-      });  
-    });
-  };
+    window.onload = function() {
+      const iFrame = document.getElementsByTagName('iframe')[0];
+      gtag('get', trackingId, 'client_id', (clientId) => {
+        gtag('get', trackingId, 'session_id', (sessionId) => {
+          iFrame.contentWindow.postMessage({'clientId': clientId, 'sessionId': sessionId});
+        });  
+      });
+    };
   </script>
 </head>
 <body style="background-color: #fff;">
