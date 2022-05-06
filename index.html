@@ -9,6 +9,11 @@
   gtag('set', 'linker', {'domains': ['www.tickettailor.com']});
   gtag('config', 'G\x2D69KLKL9G1T');
 </script>
+  <script>
+    const iFrame = document.getElementById('tt-iframe-658724');
+    const iFrameSrc = iFrame.src + '&clientId=1&sessionId=2';
+    iFrame.contentWindow.history.replaceState('Append GA client and session id', "", iFrameSrc);
+  </script>
 </head>
 <body style="background-color: #fff;">
 <!-- Ticket Tailor Widget. Paste this into your website where you want the widget to appear. Do not change the code or the widget may not work properly. -->
