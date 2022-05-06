@@ -10,9 +10,14 @@
   gtag('config', 'G\x2D69KLKL9G1T');
 </script>
   <script>
-    const iFrame = document.getElementsByTagName('iframe')[0];
-    const iFrameSrc = iFrame.src + '&clientId=1&sessionId=2';
-    iFrame.contentWindow.history.replaceState('Append GA client and session id', "", iFrameSrc);
+      window.onload = function() {
+      console.log('loaded');
+      const iFrame = document.getElementsByTagName('iframe')[0];
+      console.log(iFrame);
+      const iFrameSrc = iFrame.src + '&clientId=1&sessionId=2';
+      console.log(iFrameSrc);
+      iFrame.contentWindow.history.replaceState('Append GA client and session id', "", iFrameSrc);
+    };
   </script>
 </head>
 <body style="background-color: #fff;">
