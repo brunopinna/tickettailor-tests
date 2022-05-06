@@ -19,6 +19,7 @@
       window.onload = function() {
       const iFrame = document.getElementsByTagName('iframe')[0];
       const iFrameSrc = iFrame.src + '&clientId=' + clientId + '&sessionId=' + sessionId;
+      console.log(iFrameSrc);
       iFrame.contentWindow.history.replaceState('Append GA client and session id', "", iFrameSrc);
     };
   </script>
