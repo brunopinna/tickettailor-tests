@@ -4,7 +4,8 @@
   window.parent.postMessage('hello parent, this is child', '*')
 
     window.addEventListener('message', function (e) {
-      console.log(e.data) 
+      console.log(e.data.clientId);
+      console.log(e.data.sessionId);
     });
 </script>
 </head>
