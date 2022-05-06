@@ -8,14 +8,17 @@
   gtag('js', new Date());
   gtag('set', 'linker', {'domains': ['www.tickettailor.com']});
   gtag('config', 'G\x2D69KLKL9G1T');
+  gtag('get', 'G\x2D69KLKL9G1T', 'client_id', (client_id) => {
+    const clientId = client_id;
+  });
+  gtag('get', 'G\x2D69KLKL9G1T', 'session_id', (session_id) => {
+    const sessionId = session_id;
+  });
 </script>
   <script>
       window.onload = function() {
-      console.log('loaded');
       const iFrame = document.getElementsByTagName('iframe')[0];
-      console.log(iFrame);
-      const iFrameSrc = iFrame.src + '&clientId=1&sessionId=2';
-      console.log(iFrameSrc);
+      const iFrameSrc = iFrame.src + '&clientId=' + clientId + '&sessionId=' + sessionId;
       iFrame.contentWindow.history.replaceState('Append GA client and session id', "", iFrameSrc);
     };
   </script>
