@@ -11,6 +11,7 @@
 
   window.onload = function() {
     gtag('get', 'G\x2D69KLKL9G1T', 'client_id', (clientId) => {
+      console.log(clientId);
       gtag('get', 'G\x2D69KLKL9G1T', 'session_id', (sessionId) => {
         const iFrame = document.getElementsByTagName('iframe')[0];
         const iFrameSrc = iFrame.src + '&clientId=' + clientId + '&sessionId=' + sessionId;
