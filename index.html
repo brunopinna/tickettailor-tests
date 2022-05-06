@@ -14,10 +14,11 @@
       const iFrame = document.getElementsByTagName('iframe')[0];
       gtag('get', trackingId, 'client_id', (clientId) => {
         gtag('get', trackingId, 'session_id', (sessionId) => {
-          iFrame.contentWindow.postMessage({'clientId': clientId, 'sessionId': sessionId});
+          const message = '{"clientId": ' + clientId + ', "sessionId": ' + sessionId + '}';
+          iFrame.contentWindow.postMessage(message);
         });  
       });
-    };
+    }
   </script>
 </head>
 <body style="background-color: #fff;">
