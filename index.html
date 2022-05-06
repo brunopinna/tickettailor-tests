@@ -8,15 +8,15 @@
   gtag('js', new Date());
   gtag('set', 'linker', {'domains': ['www.tickettailor.com']});
   gtag('config', 'G\x2D69KLKL9G1T');
-  gtag('get', 'G\x2D69KLKL9G1T', 'client_id', (client_id) => {
-    const clientId = client_id;
-  });
-  gtag('get', 'G\x2D69KLKL9G1T', 'session_id', (session_id) => {
-    const sessionId = session_id;
-  });
 </script>
   <script>
       window.onload = function() {
+      gtag('get', 'G\x2D69KLKL9G1T', 'client_id', (client_id) => {
+        const clientId = client_id;
+      });
+      gtag('get', 'G\x2D69KLKL9G1T', 'session_id', (session_id) => {
+        const sessionId = session_id;
+      });  
       const iFrame = document.getElementsByTagName('iframe')[0];
       const iFrameSrc = iFrame.src + '&clientId=' + clientId + '&sessionId=' + sessionId;
       console.log(iFrameSrc);
