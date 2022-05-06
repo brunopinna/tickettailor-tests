@@ -1,29 +1,30 @@
 <html>
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-69KLKL9G1T"></script>
-  <script>
-    const trackingId = 'G\x2D69KLKL9G1T';
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('set', 'linker', {'domains': ['www.tictai.zimma']});
-    gtag('config', trackingId);
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-69KLKL9G1T"></script>
+<script>
+  const trackingId = 'G\x2D69KLKL9G1T';
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('set', 'linker', {'domains': ['*']});
+  gtag('config', trackingId);
 
-    window.onload = function() {
-      const iFrame = document.getElementsByTagName('iframe')[0];
-      gtag('get', trackingId, 'client_id', (clientId) => {
-        gtag('get', trackingId, 'session_id', (sessionId) => {
-          const message = '{"clientId": ' + clientId + ', "sessionId": ' + sessionId + '}';
-          iFrame.contentWindow.postMessage(message);
-        });  
-      });
-    }
+  window.onload = function() {
+    const iFrame = document.getElementsByTagName('iframe')[0];
+    gtag('get', trackingId, 'client_id', (clientId) => {
+      gtag('get', trackingId, 'session_id', (sessionId) => {
+        const iFrame = document.getElementsByTagName('iframe')[0];
+        const gaCrossDomain = [];
+        gaCrossDomain['clientId'] = clientId;
+        gaCrossDomain['sessionId'] = sessionId;
+        iFrame.contentWindow.postMessage(gaCrossDomain, '*');
+      });  
+    });
+  }
   </script>
 </head>
 <body style="background-color: #fff;">
-<!-- Ticket Tailor Widget. Paste this into your website where you want the widget to appear. Do not change the code or the widget may not work properly. -->
-<div class="tt-widget"><div class="tt-widget-fallback"><p><a href="https://www.tickettailor.com/all-tickets/aritmicos/?ref=website_widget" target="_blank">Click here to buy tickets</a><br /><small><a href="https://www.tickettailor.com?rf=wdg_102191" class="tt-widget-powered">Sell tickets online with Ticket Tailor</a></small></p></div><script src="https://cdn.tickettailor.com/js/widgets/min/widget.js" data-url="https://www.tickettailor.com/all-tickets/aritmicos/" data-type="inline" data-inline-minimal="true" data-inline-show-logo="false" data-inline-bg-fill="false" data-inline-inherit-ref-from-url-param="" data-inline-ref="website_widget"></script></div>
-<!-- End of Ticket Tailor Widget -->
+  <iframe src="iframe.html" id="tt-iframe-812311" frameborder="0" scrolling="no" style="overflow: hidden; height: 281px;"></iframe>
 </body>
 </html>
